@@ -1,0 +1,3 @@
+@uri = http://localhost:{{ $dotenv PORT }}
+
+GET {{uri}}/api/token/messaging

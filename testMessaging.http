@@ -1,0 +1,15 @@
+@uri = http://localhost:{{ $dotenv PORT }}
+
+@cookie = token_data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRva2VuIjoiZXlKamIyNTBaVzUwSWpvaVQzQklWVFJSZDNWaFRXMXZaMFpTTW1aRVQySXhOMnhLSzJKTlJUVnJPVVJxVlVsRlJYZDRTbXRxV1hJNGFWQllObGd4YTNGbWNERk9Xa2RzU2pSR2NtYzRia1F5VTFkRVMwaHlRV2xPU0VoSlVXTmtWamh2ZERKc1VVTk1SR1JMUVdOc2FGRkZTRVJIY2xScU1WUk1hMFI0TVhGeFlYbHZkSEJqVlhVMmRYcHpSRGRNTUdKclQzTmpiekZFY0d4MFExTkNhUzlEVmtka1JXOTNiMUo1TVM5SFdIWkZlbmRqZDFaSFNsQlhMMGR2WWswM1ZsVjZaa0ptT0M5UVFXdEpJbjA9In0sImlhdCI6MTY1NDg2MzczMywiZXhwIjoxNjU0ODgxNzMzLCJpc3MiOiJjdG91dHdlYiIsInN1YiI6ImNzdXJmX3Rva2VuIiwianRpIjoiODAwNTk4ODctZDhhZi00MWY1LTkxYTktM2I1NzVmNWYzNzEzIn0.nwr0fkH6kzFDnlJVm3z6AF0d9eixK_kRDsgQX3YU9mY
+
+POST {{uri}}/api/messaging
+Cookie: {{cookie}}
+Content-Type: application/json
+
+{
+    "reason": "je souhaite faire un nouveau devis",
+    "email": "bofgos@hot.fr",
+    "name":"bob l'éponge le 1er du nom",
+    "phone": "0623274101",    
+    "token": "eyJjb250ZW50IjoieDA2STh1VTJSZk1pZzhFaS9LT1IrSmRDS3FQYkZpUm4xK2hQRnEvRDNhbmRiN2xVZ3VNaHpJT3o0dTM5NXhDbSH9"    
+}
