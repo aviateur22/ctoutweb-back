@@ -1,8 +1,9 @@
 const Joi = require('joi');
 module.exports = Joi.object({
     /**raison */
-    reason:Joi.string()
-        .pattern(/^[^ ][a-zA-Z0-9\d*\séè¨çàùê,;'"]+[^ ]$/)
+    reason:Joi
+        .string()
+        .pattern(/^[^ ][a-zA-Z0-9\d*\séè¨çàùê,;.()'"-]+[^ ]$/)
         .required()
         .messages({
             'string.empty': 'la raison du message ne peut pas être vide',
@@ -11,7 +12,8 @@ module.exports = Joi.object({
         }),
 
     /**email*/    
-    email:Joi.string()
+    email:Joi
+        .string()
         .pattern(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)
         .required()
         .messages({
@@ -24,7 +26,7 @@ module.exports = Joi.object({
     name: Joi
         .string()
         .required()
-        .pattern(/^[^ ][a-zA-Z0-9\séè¨çàùê,;'"]+[^ ]$/)
+        .pattern(/^[^ ][a-zA-Z0-9\séè¨çàùê,;.()'"-]+[^ ]$/)
         .messages({
             'string.pattern.base': 'le format de  votre nom n\'est pas correct',
             'any.required': 'votre nom est obligatoire',
@@ -39,11 +41,21 @@ module.exports = Joi.object({
         .required()
         .pattern(/^[^ ][0-9\s]+[^ ]$/)
         .messages({
-            'string.pattern.base': 'respecter le format du numéro de téléphone: 06 06 06 06 06',
+            'string.pattern.base': 'respecter le format du numéro de téléphone: 06 xx xx xx xx',
             'any.required': 'le numéro de téléphone est obligatoire',
             'string.empty': 'le numéro de téléphone est obligatoire',
-            'string.max': 'respecter le format du numéro de téléphone: 06 06 06 06 06',
-            'string.min': 'respecter le format du numéro de téléphone: 06 06 06 06 06',
+            'string.max': 'respecter le format du numéro de téléphone: 06 xx xx xx xx',
+            'string.min': 'respecter le format du numéro de téléphone: 06 xx xx xx xx',
+        }),
+
+    message: Joi
+        .string()
+        .required()
+        .pattern(/^[^ ][a-zA-Z0-9\d*\séè¨çàùê,;.'"_:?!</>()-]+[^ ]$/)        
+        .messages({
+            'string.empty': 'le message est obligatoire',
+            'string.pattern.base': 'le contenu du message n\'est pas valide',
+            'any.required': 'le message est obligatoire'
         }),
 
     /**token aléatoire*/

@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP TABLE "messaging", "messaging_reason", "user" ,"user_role";
+DROP TABLE "message", "message_reason", "user" ,"user_role";
 
 COMMIT;

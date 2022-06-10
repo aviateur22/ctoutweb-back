@@ -1,8 +1,7 @@
 const csurfToken = require('../helpers/security/csurfToken');
-const console = require('../helpers/console');
+
 module.exports = async(req, res, next)=>{
-    /**Recupération des cookies */      
-        
+    /**Recupération des cookies */   
     if(!req.cookie){
         throw ({message: 'vous n`\'avez pas les droits pour executer l\'action demandée', statusCode:'403'});
     }    
@@ -21,14 +20,13 @@ module.exports = async(req, res, next)=>{
     }
 
     /** récupération cookie de token */
-    const cookieToken = req.cookie.token_data;  
-
+    const cookieToken = req.cookie.token_data;
+    
     /**comparaiosn du token dans le JWT et le token du client*/        
     const compare =  await csurfToken.compare(cookieToken, bodyToken);
 
     if(!compare){
         throw ({message: 'vous n`\'avez pas les droits pour executer l\'action demandée', statusCode:'403'});
     }
-
     return next();
 };

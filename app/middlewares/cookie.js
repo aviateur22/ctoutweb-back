@@ -31,6 +31,6 @@ module.exports = (req,res,next)=>{
         }
         list[name] = decodeURIComponent(value);
     });
-    req.cookie = list;    
+    req.cookie = list;  
     next();
 };

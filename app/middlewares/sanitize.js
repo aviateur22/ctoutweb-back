@@ -13,20 +13,21 @@ module.exports = (req, res, next)=>{
     let sanitizeDataParams = {};
 
     for( let key in req.query){       
-        sanitizeDataQuery[key] = xss(sanitizer.escape(req.query[key]));
+        sanitizeDataQuery[key] = xss(sanitizer.escape(req.query[key].trim()));
     }        
 
     for( let key in req.body){       
-        sanitizeDataBody[key] = xss(sanitizer.escape(req.body[key]));
+        sanitizeDataBody[key] = xss(sanitizer.escape(req.body[key].trim()));
     }        
 
     for( let key in req.params){       
-        sanitizeDataParams[key] = xss(sanitizer.escape(req.params[key]));
+        sanitizeDataParams[key] = xss(sanitizer.escape(req.params[key].trim()));
     }        
 
     /** mise à jour des données nettoyés*/
     req.body = sanitizeDataBody;
     req.query = sanitizeDataQuery;
     req.params = sanitizeDataParams;
+    
     next();
 };
