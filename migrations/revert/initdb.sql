@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add DDLs here.
+DROP TABLE "messaging", "messaging_reason", "user" ,"user_role";
 
 COMMIT;
