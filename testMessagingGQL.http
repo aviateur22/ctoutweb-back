@@ -1,0 +1,40 @@
+@endpoint = http://localhost:{{$dotenv PORTGQL}}/
+
+POST {{ endpoint }}
+content-type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query Message($messageId: ID!) {
+    message(id: $messageId) {
+        id,
+        reason,
+        messageReason{
+            id
+        }
+    }
+}
+
+{
+  "messageId": 1
+}
+
+###
+POST {{ endpoint }}
+content-type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+    createMessage(reason: "fff", name: "test", email: "tets", phone: "kfkfkf", message: "jfjfjf"){
+        id
+    }
+}
+
+###
+POST {{ endpoint }}
+content-type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+    deleteMessage(id: "2"){       
+    }
+}

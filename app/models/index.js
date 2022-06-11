@@ -34,7 +34,8 @@ Message.belongsTo(MessageReason,{
 MessageReason.hasMany(Message,{
     foreignKey: 'message_reason_id',
     as: 'messageReason'
-})
+});
+console.log('dd')
 
 
 
