@@ -6,12 +6,14 @@ const nodeMailer = require('nodemailer');
 class Mailer{
     /**
      * constructor
-     * @param {*} emailType - type d'email a envoyer
+     * @param {Text} emailType - type d'email a envoyer
      * @param {Array} to  - tableau d'adresse d'email
+     * @param {Object} data  - données de l'email
      */
-    constructor(emailType, to){
+    constructor(emailType, to, data){
         this.emailType = emailType;
         this.to = to;
+        this.data = data;
     }
 
     /**
@@ -33,7 +35,13 @@ class Mailer{
 
     async sendEmail(){
         /** recuperation du template */
-        const template = await templateHtml(this.emailType);       
+        let template = await templateHtml(this.emailType);  
+        
+        for( let key in this.data) 
+        {
+            console.log(this.data[key], key);
+            template = template.replace('!%!'+ key + '!%!', this.data[key]);
+        }
 
         /**envoie de l'email */
         await this.to.forEach(email => {

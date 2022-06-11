@@ -19,10 +19,14 @@ module.exports = {
             name: name,
             phone: phone,
             message: message
-        });        
+        }); 
 
         /** initialisation email */
-        const mailer = new Mailer(emailType.emailType.message, [process.env.EMAIL_ACCOUNT, email]);
+        const mailer = new Mailer(emailType.emailType.message,[process.env.EMAIL_ACCOUNT, email], 
+            {
+                reason, name, phone, message, email
+            }
+        );
 
         /** envoie d'un email */
         await mailer.sendEmail();
