@@ -22,13 +22,21 @@ class Mailer{
     transporterConfig(){
         return (
             nodeMailer.createTransport({
-                host: 'smtp.gmail.com',
+                host: 'mail.gandi.net',
                 port: 465,
                 secure: true,
-                auth: {
-                    user: process.env.EMAIL_ACCOUNT, 
-                    pass: process.env.EMAIL_PASSWORD, 
-                },
+                auth:{
+                    user: 'administration@ctoutweb.fr',
+                    pass: 'affirmer2011'
+                }
+
+                // host: 'smtp.gmail.com',
+                // port: 465,
+                // secure: true,
+                // auth: {
+                //     user: process.env.EMAIL_ACCOUNT, 
+                //     pass: process.env.EMAIL_PASSWORD, 
+                // },
             })
         );
     }
@@ -45,7 +53,7 @@ class Mailer{
         /**envoie de l'email */
         await this.to.forEach(email => {
             let info = this.transporterConfig().sendMail({
-                from: '"CtoutWeb 🔨" <ctoutweb@gmail.com>',
+                from: `CtoutWeb 🔨" <${process.env.EMAIL_ACCOUNT}>`,
                 to: email,
                 subject: 'Nouvelle question ✔',
                 html: template,
