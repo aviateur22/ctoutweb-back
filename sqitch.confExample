@@ -7,4 +7,4 @@
 	# registry = sqitch
 	# client = C:\Program Files\PostgreSQL\12\bin\psql
 [target "localhost"]
-	uri = 
+	uri = db:pg://.....
