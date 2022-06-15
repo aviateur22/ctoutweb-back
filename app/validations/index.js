@@ -4,10 +4,10 @@
  * @returns 
  */
 module.exports = (schema)=>async(req, res, next)=>{
-    try {
+    try {        
         if(req.method ==='GET'){
             await schema.validateAsync(req.query);
-        } else {
+        } else {            
             await schema.validateAsync(req.body);
         }
         next();        

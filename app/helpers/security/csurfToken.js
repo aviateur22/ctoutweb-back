@@ -42,7 +42,7 @@ module.exports = {
      * @param {Text} tokenClient - jeton chiffré contenantles données a vérifier 
      * @returns 
      */
-    compare: async(jwt, tokenClient)=>{
+    verify: async(jwt, tokenClient)=>{
         //clé secrete
         const KEY = process.env.JWT_PRIVATE_KEY;
 

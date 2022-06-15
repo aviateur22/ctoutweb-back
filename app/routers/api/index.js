@@ -9,5 +9,4 @@ router.use('/messaging', messaging);
 /** router  token*/
 router.use('/token', token);
 
-
 module.exports = router;

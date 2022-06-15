@@ -14,6 +14,7 @@ module.exports = (err, req, res, next)=>{
             logger.error(err);
 
             return res.status(500).json({
+                error: err,
                 errorMessage: 'erreur interne au serveur'
             });
         }
@@ -26,6 +27,7 @@ module.exports = (err, req, res, next)=>{
         logger.error(error);
         /**erreur non managé */
         return res.status(500).json({
+            error: error,
             errorMessage: 'erreur interne au serveur'
         });        
     }    

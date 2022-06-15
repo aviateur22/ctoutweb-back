@@ -3,30 +3,47 @@ let sequelize;
 
 /** connection en production */
 if(process.env.NODE_ENV === 'production'){
-    sequelize = new Sequelize(process.env.DATABASE_URL,        
+    sequelize = new Sequelize(
+        process.env.PGDATABASE,
+        process.env.PGUSER,
+        process.env.PGPASSWORD,
         {
-            dialectOptions:{
-                ssl: {
-                    require: true,
-                    rejectUnauthorized: false
-                }
-            },
+            host: 'db',
+            dialect: 'postgres',
+            logging: false,
             define:{
                 underscored:true,
                 updatedAt: 'updated_at',
-                createdAt: 'created_at'            
+                createdAt: 'created_at'
             }
         });
 } else {
     /** connection en local */
-    sequelize = new Sequelize(process.env.DATABASE_URL,{
-        logging: false,
-        define:{
-            underscored:true,
-            updatedAt: 'updated_at',
-            createdAt: 'created_at'
-        }
-    });
+    sequelize = new Sequelize( process.env.DATABASE_URL,
+        {
+            logging: false,
+            define:{
+                underscored:true,
+                updatedAt: 'updated_at',
+                createdAt: 'created_at'
+            }
+        });
+
+    /** DOCKER */
+    // sequelize = new Sequelize(
+    //     process.env.PGDATABASE,
+    //     process.env.PGUSER,
+    //     process.env.PGPASSWORD,
+    //     {
+    //         host: 'db',
+    //         dialect: 'postgres',
+    //         logging: false,
+    //         define:{
+    //             underscored:true,
+    //             updatedAt: 'updated_at',
+    //             createdAt: 'created_at'
+    //         }
+    //     });
 }
 sequelize
     .authenticate()

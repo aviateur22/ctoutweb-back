@@ -23,7 +23,7 @@ module.exports = async(req, res, next)=>{
     const cookieToken = req.cookie.token_data;
     
     /**comparaiosn du token dans le JWT et le token du client*/        
-    const compare =  await csurfToken.compare(cookieToken, bodyToken);
+    const compare =  await csurfToken.verify(cookieToken, bodyToken);
 
     if(!compare){
         throw ({message: 'vous n`\'avez pas les droits pour executer l\'action demandée', statusCode:'403'});

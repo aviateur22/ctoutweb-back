@@ -6,7 +6,7 @@ const controllerHandler = require('../../helpers/controllerHandler');
 
 /**middleware */
 const cookieMiddleware = require('../../middlewares/cookie');
-const checkTokenMiddleware = require('../../middlewares/checkToken');
+const verifyTokenMiddleware = require('../../middlewares/verifyToken');
 const sanitizeMiddleware = require('../../middlewares/sanitize');
 
 /**validation données */
@@ -18,8 +18,8 @@ const messagingController = require('../../controllers').messagingController;
 
 /** router api */
 router.post('/', 
-    controllerHandler(cookieMiddleware),
-    controllerHandler(checkTokenMiddleware),
+    // controllerHandler(cookieMiddleware),
+    // controllerHandler(verifyTokenMiddleware),
     multer.none(),
     joiValidation(messagingSchema.sendSchema),
     controllerHandler(sanitizeMiddleware),

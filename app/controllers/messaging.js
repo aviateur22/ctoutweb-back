@@ -9,7 +9,7 @@ module.exports = {
      * @param {Object} res 
      * @param {Object} next 
      */
-    sendMessage:async(req, res, next)=>{        
+    sendMessage:async(req, res, next)=>{ 
         /** recuperation des données */
         const { email, reason, name, phone, message } = req.body;       
 

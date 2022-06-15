@@ -7,7 +7,7 @@ module.exports= ()=>{
     /** Mode Développement  */
     if(process.env.NODE_ENV==='DEV'){
         console.log('en dev');
-        const CORS_ORIGIN = 'https://localhost:8080,http://localhost:8080';        
+        const CORS_ORIGIN = process.env.CORS_ORIGIN;        
         corsOption.origin= CORS_ORIGIN.split(',');        
     } else /**mode PRDODUCTION */    
     {        
