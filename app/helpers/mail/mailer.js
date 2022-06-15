@@ -38,8 +38,7 @@ class Mailer{
         let template = await templateHtml(this.emailType);  
         
         for( let key in this.data) 
-        {
-            console.log(this.data[key], key);
+        {         
             template = template.replace('!%!'+ key + '!%!', this.data[key]);
         }
 
