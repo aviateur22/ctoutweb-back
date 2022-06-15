@@ -3,8 +3,8 @@
  */
 module.exports = {    
     cookieOption: {
-        secure: false,
-        sameSite: 'lax',
+        secure: true,
+        sameSite: 'none',
         httpOnly: true
     }
 };
