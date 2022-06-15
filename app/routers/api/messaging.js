@@ -18,9 +18,9 @@ const messagingController = require('../../controllers').messagingController;
 
 /** router api */
 router.post('/', 
-    controllerHandler(cookieMiddleware),
-    controllerHandler(checkTokenMiddleware),
     multer.none(),
+    controllerHandler(cookieMiddleware),
+    controllerHandler(checkTokenMiddleware),    
     joiValidation(messagingSchema.sendSchema),
     controllerHandler(sanitizeMiddleware),
     controllerHandler(messagingController.sendMessage));

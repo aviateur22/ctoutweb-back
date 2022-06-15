@@ -1,7 +1,7 @@
 const csurfToken = require('../helpers/security/csurfToken');
 
 module.exports = async(req, res, next)=>{
-    /**Recupération des cookies */   
+    /**Recupération des cookies */ 
     if(!req.cookie){
         throw ({message: 'vous n`\'avez pas les droits pour executer l\'action demandée', statusCode:'403'});
     }    
@@ -10,7 +10,7 @@ module.exports = async(req, res, next)=>{
     if(!req.cookie.token_data){
         throw ({message: 'vous n`\'avez pas les droits pour executer l\'action demandée', statusCode:'403'});
     }   
-    
+
     /** token depuis la requete */
     const bodyToken = req.body.token;  
 

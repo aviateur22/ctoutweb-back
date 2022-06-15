@@ -18,7 +18,7 @@ module.exports = {
         /**données manquantes */
         if(!data.jwt || !data.token){
             throw ({
-                message: '',
+                message: 'erreur csurf_token',
                 statusCode: 500
             });
         }
@@ -26,7 +26,12 @@ module.exports = {
         const jwt = data.jwt;
         const token = data.token;
 
-        res.cookie('token_data', jwt, cookieOption);
+        /**option des cookie */
+        const option =  cookieOption.cookieOption;
+        
+        /**génération d'un cookie */
+        res.cookie('token_data', jwt, {secure: option.secure, sameSite:option.sameSite, httpOnly: option.httpOnly });
+        
         res.status(200).json({
             token: token
         });

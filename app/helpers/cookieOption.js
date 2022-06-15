@@ -1,10 +1,10 @@
 /**
  * parametrage des cookie
  */
-module.exports = ()=>{
-    return ({
-        secure: true,
-        sameSite: 'none',
+module.exports = {    
+    cookieOption: {
+        secure: false,
+        sameSite: 'lax',
         httpOnly: true
-    });
+    }
 };
