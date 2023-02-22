@@ -1,3 +1,4 @@
+/** génération des jwt */
 const { v4: uuidv4 } = require('uuid');
 const jsonWebtoken = require('jsonwebtoken');
 

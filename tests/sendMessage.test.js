@@ -23,9 +23,7 @@ describe('envoie d\'un message', () => {
         expect(res.body).toHaveProperty('message');
         expect(res.statusCode).toEqual(200);        
     });    
-});
 
-describe('envoie d\'un message', () => {
     it('succes d\'envoie', async() => {
         const res = await request(app)
             .post('/api/messaging/')
@@ -41,10 +39,8 @@ describe('envoie d\'un message', () => {
             
         expect(res.body).toHaveProperty('message');
         expect(res.statusCode).toEqual(200);        
-    });    
-});
-
-describe('envoie d\'un message', ()=>{
+    }); 
+    
     it('echec d\'envoie - erreur du message', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -61,9 +57,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie - message absent', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -80,9 +74,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie - token ou jwt faux', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -99,9 +91,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(403);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie - token absent de la requete', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -118,9 +108,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(403);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie - erreur email', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -137,9 +125,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie - erreur email', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -156,9 +142,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie-email absent', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -175,9 +159,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie-raison faut', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -194,9 +176,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie-raison absent', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -213,9 +193,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie-phone faux', async()=>{
         const res = await request(app)
             .post('/api/messaging/')
@@ -232,9 +210,7 @@ describe('envoie d\'un message', ()=>{
         expect(res.body).toHaveProperty('errorMessage');
         expect(res.statusCode).toEqual(400);
     });
-});
 
-describe('envoie d\'un message', ()=>{
     it('echec d\'envoie-phone absent', async()=>{
         const res = await request(app)
             .post('/api/messaging/')

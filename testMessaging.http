@@ -1,6 +1,6 @@
 @uri = http://localhost:{{ $dotenv PORT }}
 
-@cookie = token_data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRva2VuIjoiZXlKamIyNTBaVzUwSWpvaVQzQklWVFJSZDNWaFRXMXZaMFpTTW1aRVQySXhOMnhLSzJKTlJUVnJPVVJxVlVsRlJYZDRTbXRxV1hJNGFWQllObGd4YTNGbWNERk9Xa2RzU2pSR2NtYzRia1F5VTFkRVMwaHlRV2xPU0VoSlVXTmtWamh2ZERKc1VVTk1SR1JMUVdOc2FGRkZTRVJIY2xScU1WUk1hMFI0TVhGeFlYbHZkSEJqVlhVMmRYcEJVM1JtUlRGQ1VEUmpaWElyZG1ZeVEzWnJTelJVY0RJMVJTdHdVRUZuUkZoc2NsazNiRE5aT1VvMWVEVlVaRXBHTkZoU1MxZzVXVVF5U1ZaV2FqTTRJbjA9In0sImlhdCI6MTY1NDk4Mjg0MSwiZXhwIjoxNjU1MDAwODQxLCJpc3MiOiJjdG91dHdlYiIsInN1YiI6ImNzdXJmX3Rva2VuIiwianRpIjoiOTM1OGU3ZTQtY2MyMC00NzMxLWI2NWYtNDRjYTQyNmE2NmJmIn0.HimXY9UqVJh_c4x6couS7BFVdY64uAEj05d7R2YgpLQ
+@cookie = token_data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRva2VuIjoiZXlKamIyNTBaVzUwSWpvaWIzUlRTR3RRV0d4aWRHOXpXR1UzV1d0WWVVcFhTMUZMZWxsVk5YQnJkekJPYTJjM1MyWkNSVEZMY0dWeFpVSklNRmRDUm5sc0wzWjVTbEpLTDNOcE1ERXdSbW95TTBoRlFqTk5kSGxXU2psalNEWk1WalY2WWxGU1NFUlZUbVZTYnpScFpHTjZaWEZRZWxOa2VrRlJNME0xYm5KTlMwTm1WSEJ6TTJWMlMwTXpWVTltZDFoNmQxcGhlbFp0T1dKV1Fsa3JXbnBVUmpWWFVIa3laaXN3VTFGeE0wcG5kR2xzVW10RE5tOVRlSGRSVjNwaFowTXliRWwyVEhSeVVGaG5JbjA9In0sImlhdCI6MTY1NjAxODE3NywiZXhwIjoxNjU2MDM2MTc3LCJpc3MiOiJjdG91dHdlYiIsInN1YiI6ImNzdXJmX3Rva2VuIiwianRpIjoiNWFkZTE2OTktYjc1NS00MDcyLWIzNTMtMDcyYzlmY2Y3NmFiIn0.nPWziuvYsV1axWCmnxsetaTqP7D0ro_UIcFrvh3Aw3Y
 
 POST {{uri}}/api/messaging
 Cookie: {{cookie}}
@@ -12,5 +12,5 @@ Content-Type: application/json
     "name":"bob l'éponge le 1er du nom",
     "phone": "0623274101",    
     "message": "bonjour, comment vas tu. Moi je vais très bien. Que fais tu de beau? moi je ne fais rien; ou bien je fais plein : de test - A -B -_VC",
-    "token": "eyJjb250ZW50IjoiNzVRS0lOdmlxQmhEUjc4b0pLYjRyeEY0RkpLcFVCbm9KdGNsbjhNMnpJdzNHV0tsQnExK0Vxc3dhYld4MFlFUSJ9"    
+    "token": "eyJjb250ZW50Ijoib2EzS01mWmFCNmxubUxlcXo5ZTBOL2xkVlZOZzlMMkQ0RW8xbmlNQWJBS1p5SHF6QlVTZUNEU3ZRMTVwdGVlbCJ9"    
 }

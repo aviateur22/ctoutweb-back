@@ -1,6 +1,4 @@
-/**
- * ordonne correctement les cookies
- */
+/** ordonne correctement les cookies */
 module.exports = (req,res,next)=>{    
     /**object pour stocker les cookies */
     const list = {};

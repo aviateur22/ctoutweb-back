@@ -1,3 +1,4 @@
+/** vérification des token csurf */
 const csurfToken = require('../helpers/security/csurfToken');
 
 module.exports = async(req, res, next)=>{

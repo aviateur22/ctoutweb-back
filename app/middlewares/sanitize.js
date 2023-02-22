@@ -12,7 +12,7 @@ module.exports = (req, res, next)=>{
     let sanitizeDataQuery = {};
     let sanitizeDataParams = {};
 
-    for( let key in req.query){       
+    for( let key in req.query){
         sanitizeDataQuery[key] = xss(sanitizer.escape(req.query[key].trim()));
     }        
 

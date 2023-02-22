@@ -5,6 +5,7 @@
  */
 module.exports = (schema)=>async(req, res, next)=>{
     try {
+        console.log(schema)
         if(req.method ==='GET'){
             await schema.validateAsync(req.query);
         } else {
